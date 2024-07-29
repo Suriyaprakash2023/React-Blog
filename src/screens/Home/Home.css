@@ -1,3 +1,22 @@
 .container{
-    margin-top: 90px;
+    margin: 70px 0px 0px 110px;
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
+@media (max-width: 768px) {
+    .container {
+      /* margin: 70px 0px 0px 110px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+    }
+    .card{
+        width:300px;
+    }
+    .card:hover{
+        transform: matrix3d();
+    }
+  }
+  

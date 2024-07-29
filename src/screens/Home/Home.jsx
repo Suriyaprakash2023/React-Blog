@@ -1,19 +1,34 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import './Home.css';
+import Post from '../../components/Post/Post';
+import UseFetch  from '../../components/Hooks/UseFetch';
 
-export default function Home() {
-    const [posts,setPosts]=useState([])
+function Home() {
+  
+  const {data : posts,error,isPending}= UseFetch('https://jsonplaceholder.typicode.com/posts')
 
-    useEffect(()=>{
-        const fetchPosts = async()=>{
-            const response =await fetch('https://jsonplaceholder.typicode.com/posts')
-
-            const jsonResponse =response.json() // last commit
-        }
-    },[])
   return (
     <div className='container'>
-      <p>this is home</p>
+            <div className="row">
+      {error ? (
+        <p>Error: {error}</p>
+      ) : (
+        posts.length > 0 ? (
+          // Display posts here (replace with your rendering logic)
+          <ul>
+            {posts.map((post) => (  
+             <Post post={post} key={post.id}/>
+
+            ))}
+          </ul>
+        ) : (
+          isPending && <p>Loading posts...</p>
+        )
+      )}
+      
+      </div>
     </div>
-  )
+  );
 }
+
+export default Home;

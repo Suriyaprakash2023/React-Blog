@@ -22,7 +22,7 @@
                             Navbar
     ======================================================*/
   #navbar {
-    background: rgb(28, 113, 233);
+    background: linear-gradient(105deg,#6e99e6 ,#093c94);
     color: rgb(243, 245, 246);
     position: fixed;
     top: 0;
@@ -32,7 +32,7 @@
     z-index: 10;
   }
   
-  .nav-wrapper {
+  /* .nav-wrapper {
     margin: auto;
     text-align: center;
     width: 70%;
@@ -42,12 +42,16 @@
       }
     } @media(max-width: 638px) {
         .nav-wrapper {
-          width: 100%;
+          width: 70%;
         }
       } 
-  
-  
+   */
+  .text-white{
+    font-family: Calibri;
+    font-weight: 600;
+  }
   .logo {
+    color: white !important;
     float: left;
     margin-left: 28px;
     font-size: 1.5em;
@@ -56,7 +60,7 @@
     text-transform: uppercase;
   } @media(max-width: 768px) {
       .logo {
-  /*       margin-left: 5px; */
+        margin-left: 5px;
       }
     }
   
@@ -84,7 +88,7 @@
   }
   
   #navbar li a {
-    color:rgba(245, 245, 245, 0.612);
+    color:rgba(255, 255, 255, 0.705);
     display: block;
     font-size: 0.9em;
     font-weight: 500;
@@ -113,7 +117,7 @@
     width: 0%;
     height: 1px;
     bottom: -1px;
-    background: rgb(10, 243, 177);
+    background: rgba(0, 0, 0, 0.3);
   }
   
   #navbar li a:before {
@@ -128,7 +132,7 @@
   }
   
   #navbar li a:hover:before {
-    background: rgb(4, 202, 251);
+    background: rgba(0, 0, 0, 0.3);
     width: 100%;
     transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
   }
@@ -322,3 +326,11 @@
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
   }
+/* 
+  @media (min-width: 768px) {
+
+  #navbar {
+    width: 50%;
+  }
+
+  } */
